@@ -39,7 +39,7 @@ Concatenate two strings together.
 
 ## indexOf(string) : int
 
-Find the position of a character
+Find the position of a character.
 
 ```
     function indexOf() {
@@ -51,7 +51,7 @@ Find the position of a character
 
 ## length() : uint
 
-Get the length of a string
+Get the length of a string.
 
 ```
     function length() {
@@ -64,7 +64,7 @@ Get the length of a string
 
 ## substring(uint) : string
 
-Get a partial section of the string
+Get a partial section of the string.
 
 ```
     function substring() {
@@ -76,7 +76,7 @@ Get a partial section of the string
 
 ## split(string) : string[]
 
-Splits a string into an array of smaller strings based off a delimiter
+Splits a string into an array of smaller strings based off a delimiter.
 
 ```
     function split() {
@@ -92,7 +92,7 @@ Splits a string into an array of smaller strings based off a delimiter
 
 ## compareTo(string) : bool
 
-Compare two strings
+Compare two strings.
 
 ```
     function compareTo() {
@@ -105,7 +105,7 @@ Compare two strings
 
 ## compareToIgnoreCase(string) : bool
 
-Compare two strings
+Compare two strings discarding alphabetic case.
 
 ```
     function compareToIgnoreCase() {
@@ -118,7 +118,7 @@ Compare two strings
 
 ## upper(string) : string
 
-Converts a string to use upper alphabetic case
+Converts a string to use upper alphabetic case.
 
 ```
     function upper() {
@@ -132,7 +132,7 @@ Converts a string to use upper alphabetic case
 ## lower(string) : string
 
 
-Converts a string to use lower alphabetic case
+Converts a string to use lower alphabetic case.
 
 ```
     function lower() {
