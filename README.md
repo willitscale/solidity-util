@@ -33,7 +33,7 @@ Concatenate two strings together.
 ```
     function concat() {
         string memory myVal = "firstname";
-        myVal.concat(" ").concat("lastname");
+        myVal = myVal.concat(" ").concat("lastname");
     }
 ```
 
