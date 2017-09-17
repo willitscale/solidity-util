@@ -26,7 +26,7 @@ contract MyContract {
 
 This will then allow the use of the functionality listed above.
 
-## Concat
+## concat(string) : string 
 
 Concatenate two strings together.
 
@@ -37,7 +37,7 @@ Concatenate two strings together.
     }
 ```
 
-## IndexOf
+## indexOf(string) : int
 
 Find the position of a character
 
@@ -49,7 +49,7 @@ Find the position of a character
     }
 ```
 
-## Length
+## length() : uint
 
 Get the length of a string
 
@@ -62,7 +62,7 @@ Get the length of a string
     }
 ```
 
-## Substring
+## substring(uint) : string
 
 Get a partial section of the string
 
@@ -74,7 +74,7 @@ Get a partial section of the string
     }
 ```
 
-## Split
+## split(string) : string[]
 
 Splits a string into an array of smaller strings based off a delimiter
 
@@ -90,7 +90,7 @@ Splits a string into an array of smaller strings based off a delimiter
     }
 ```
 
-## CompareTo
+## compareTo(string) : bool
 
 Compare two strings
 
@@ -103,8 +103,7 @@ Compare two strings
     }
 ```
 
-
-## CompareToIgnoreCase
+## compareToIgnoreCase(string) : bool
 
 Compare two strings
 
@@ -117,7 +116,7 @@ Compare two strings
     }
 ```
 
-## Upper
+## upper(string) : string
 
 Converts a string to use upper alphabetic case
 
@@ -130,7 +129,7 @@ Converts a string to use upper alphabetic case
     }
 ```
 
-## Lower
+## lower(string) : string
 
 
 Converts a string to use lower alphabetic case
