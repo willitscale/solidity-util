@@ -5,15 +5,15 @@ Solidity is still very primitive and doing basic operations can be quite tedious
 **Please be aware that some of these functions can be quite gas heavy so use appropriately!**
 
 Currently, there is only a utility for functions which is loosely based around the Java implementation of strings which has the following support:
-- concat(string) : string
-- indexOf(string) : int
-- length() : uint
-- substring(uint) : string
-- split(string) : string[]
-- compareTo(string) : bool
-- compareToIgnoreCase(string) : bool
-- upper(string) : string
-- lower(string) : string
+- [concat\(string\) : string](#concatstring--string)
+- [indexOf\(string\) : int](#indexofstring--int)
+- [length\(\) : uint](#length--uint)
+- [substring\(uint\) : string](#substringuint--string)
+- [split\(string\) : string\[\]](#splitstring--string)
+- [compareTo\(string\) : bool](#comparetostring--bool)
+- [compareToIgnoreCase\(string\) : bool](#comparetoignorecasestring--bool)
+- [upper\(string\) : string](#upperstring--string)
+- [lower\(string\) : string](#lowerstring--string)
 
 To use this library simply specify the import as the one in this library and use Strings for the data type string:
 ```
