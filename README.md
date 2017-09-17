@@ -4,7 +4,7 @@ Solidity is still very primitive and doing basic operations can be quite tedious
 
 **Please be aware that some of these functions can be quite gas heavy so use appropriately!**
 
-Currently, there is only a utility for functions which is loosely based around the Java implementation of strings which has the following support:
+Currently, there are only String utility functions available which is loosely based around the Java implementation of strings that has the following support:
 - [concat\(string\) : string](#concatstring--string)
 - [indexOf\(string\) : int](#indexofstring--int)
 - [length\(\) : uint](#length--uint)
