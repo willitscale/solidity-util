@@ -324,32 +324,9 @@ library Strings {
         constant
         returns (bytes1) {
 
-        if (_b1 == 0x61) return 0x41;
-        if (_b1 == 0x62) return 0x42;
-        if (_b1 == 0x63) return 0x43;
-        if (_b1 == 0x64) return 0x44;
-        if (_b1 == 0x65) return 0x45;
-        if (_b1 == 0x66) return 0x46;
-        if (_b1 == 0x67) return 0x47;
-        if (_b1 == 0x68) return 0x48;
-        if (_b1 == 0x69) return 0x49;
-        if (_b1 == 0x6A) return 0x4A;
-        if (_b1 == 0x6B) return 0x4B;
-        if (_b1 == 0x6C) return 0x4C;
-        if (_b1 == 0x6D) return 0x4D;
-        if (_b1 == 0x6E) return 0x4E;
-        if (_b1 == 0x6F) return 0x4F;
-        if (_b1 == 0x70) return 0x50;
-        if (_b1 == 0x71) return 0x51;
-        if (_b1 == 0x72) return 0x52;
-        if (_b1 == 0x73) return 0x53;
-        if (_b1 == 0x74) return 0x54;
-        if (_b1 == 0x75) return 0x55;
-        if (_b1 == 0x76) return 0x56;
-        if (_b1 == 0x77) return 0x57;
-        if (_b1 == 0x78) return 0x58;
-        if (_b1 == 0x79) return 0x59;
-        if (_b1 == 0x7A) return 0x5A;
+        if (_b1 >= 0x61 && _b1 <= 0x71) {
+            return _b1-32;
+        }
 
         return _b1;
     }
@@ -369,33 +346,10 @@ library Strings {
         constant
         returns (bytes1) {
 
-        if (_b1 == 0x41) return 0x61;
-        if (_b1 == 0x42) return 0x62;
-        if (_b1 == 0x43) return 0x63;
-        if (_b1 == 0x44) return 0x64;
-        if (_b1 == 0x45) return 0x65;
-        if (_b1 == 0x46) return 0x66;
-        if (_b1 == 0x47) return 0x67;
-        if (_b1 == 0x48) return 0x68;
-        if (_b1 == 0x49) return 0x69;
-        if (_b1 == 0x4A) return 0x6A;
-        if (_b1 == 0x4B) return 0x6B;
-        if (_b1 == 0x4C) return 0x6C;
-        if (_b1 == 0x4D) return 0x6D;
-        if (_b1 == 0x4E) return 0x6E;
-        if (_b1 == 0x4F) return 0x6F;
-        if (_b1 == 0x50) return 0x70;
-        if (_b1 == 0x51) return 0x71;
-        if (_b1 == 0x52) return 0x72;
-        if (_b1 == 0x53) return 0x73;
-        if (_b1 == 0x54) return 0x74;
-        if (_b1 == 0x55) return 0x75;
-        if (_b1 == 0x56) return 0x76;
-        if (_b1 == 0x57) return 0x77;
-        if (_b1 == 0x58) return 0x78;
-        if (_b1 == 0x59) return 0x79;
-        if (_b1 == 0x5A) return 0x7A;
-
+        if (_b1 >= 0x41 && _b1 <= 0x5A) {
+            return _b1+32;
+        }
+        
         return _b1;
     }
 }
