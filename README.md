@@ -2,9 +2,51 @@
 
 Solidity is still very primitive and doing basic operations can be quite tedious and off-putting to newer developers. I've put together a very basic library of functions to help improve this. 
 
+To use this library simply specify the import as the one in this library, use Strings for the data type string and use Integers for the data type uint:
+```
+pragma solidity ^0.4.0;
+import "github.com/willitscale/solidity-util/lib/Strings.sol";
+import "github.com/willitscale/solidity-util/lib/Integers.sol";
+contract MyContract {
+    using Strings for string;
+    using Integers for uint;
+}
+```
+This will then allow the use of the functionality listed below.
+
+## Integers
+
+The functionality of this library is based loosely around the Java implementation:
+- [parseInt\(string\) : uint](#parseintstring--uint)
+- [toString\(\) : uint](#tostring--uint)
+
+### parseInt(string) : uint 
+
+Convert an ASCII string to its unsigned integer equivalent
+
+```
+    function parseInt() {
+        if (321 == Integers.parseInt("321")) {
+            // Matches the uint value
+        }
+    }
+```
+
+### toString() : uint 
+
+Convert an unsigned integer to its ASCII string equivalent
+
+```    
+    function toString(uint _value) returns (string) {
+        return _value.toString();
+    }
+```
+
+## Strings
+
 **Please be aware that some of these functions can be quite gas heavy so use appropriately!**
 
-Currently, there are only String utility functions available which is loosely based around the Java implementation of strings that has the following support:
+The functionality of this library is based loosely around the Java implementation:
 - [concat\(string\) : string](#concatstring--string)
 - [indexOf\(string\) : int](#indexofstring--int)
 - [length\(\) : uint](#length--uint)
@@ -15,18 +57,8 @@ Currently, there are only String utility functions available which is loosely ba
 - [upper\(string\) : string](#upperstring--string)
 - [lower\(string\) : string](#lowerstring--string)
 
-To use this library simply specify the import as the one in this library and use Strings for the data type string:
-```
-pragma solidity ^0.4.0;
-import "github.com/willitscale/solidity-util/lib/Strings.sol";
-contract MyContract {
-    using Strings for string;
-}
-```
 
-This will then allow the use of the functionality listed above.
-
-## concat(string) : string 
+### concat(string) : string 
 
 Concatenate two strings together.
 
@@ -37,7 +69,7 @@ Concatenate two strings together.
     }
 ```
 
-## indexOf(string) : int
+### indexOf(string) : int
 
 Find the position of a character.
 
@@ -49,7 +81,7 @@ Find the position of a character.
     }
 ```
 
-## length() : uint
+### length() : uint
 
 Get the length of a string.
 
@@ -62,7 +94,7 @@ Get the length of a string.
     }
 ```
 
-## substring(uint) : string
+### substring(uint) : string
 
 Get a partial section of the string.
 
@@ -74,7 +106,7 @@ Get a partial section of the string.
     }
 ```
 
-## split(string) : string[]
+### split(string) : string[]
 
 Splits a string into an array of smaller strings based off a delimiter.
 
@@ -90,7 +122,7 @@ Splits a string into an array of smaller strings based off a delimiter.
     }
 ```
 
-## compareTo(string) : bool
+### compareTo(string) : bool
 
 Compare two strings.
 
@@ -103,7 +135,7 @@ Compare two strings.
     }
 ```
 
-## compareToIgnoreCase(string) : bool
+### compareToIgnoreCase(string) : bool
 
 Compare two strings discarding alphabetic case.
 
@@ -116,7 +148,7 @@ Compare two strings discarding alphabetic case.
     }
 ```
 
-## upper(string) : string
+### upper(string) : string
 
 Converts a string to use upper alphabetic case.
 
@@ -129,7 +161,7 @@ Converts a string to use upper alphabetic case.
     }
 ```
 
-## lower(string) : string
+### lower(string) : string
 
 
 Converts a string to use lower alphabetic case.
