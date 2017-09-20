@@ -19,6 +19,8 @@ This will then allow the use of the functionality listed below.
 The functionality of this library is based loosely around the Java implementation:
 - [parseInt\(string\) : uint](#parseintstring--uint)
 - [toString\(\) : uint](#tostring--uint)
+- [toBytes\(uint\) : bytes](#tobytesuint--bytes)
+- [toByte\(uint8\) : byte](#tobyteuint8--byte)
 
 ### parseInt(string) : uint 
 
@@ -39,6 +41,28 @@ Convert an unsigned integer to its ASCII string equivalent
 ```    
     function toString(uint _value) returns (string) {
         return _value.toString();
+    }
+```
+
+### toBytes() : uint 
+
+Convert an unsigned integer to a bytes equivalent
+
+```    
+    function toString(uint _value) returns (bytes) {
+        return _value.toBytes();
+    }
+```
+
+### toByte() : uint 
+
+Convert an 8-bit unsigned integer to its byte equivalent
+
+```    
+    function toByte(uint8 _value) {
+        if (0x1 == Integer.toByte(_value)) {
+            // Matching byte
+        }
     }
 ```
 
