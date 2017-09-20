@@ -324,8 +324,8 @@ library Strings {
         constant
         returns (bytes1) {
 
-        if (_b1 >= 0x61 && _b1 <= 0x71) {
-            return _b1-32;
+        if (_b1 >= 0x61 && _b1 <= 0x7A) {
+            return bytes1(uint8(_b1)-32);
         }
 
         return _b1;
@@ -347,7 +347,7 @@ library Strings {
         returns (bytes1) {
 
         if (_b1 >= 0x41 && _b1 <= 0x5A) {
-            return _b1+32;
+            return bytes1(uint8(_b1)+32);
         }
         
         return _b1;
