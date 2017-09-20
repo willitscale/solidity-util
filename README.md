@@ -44,7 +44,7 @@ Convert an unsigned integer to its ASCII string equivalent
     }
 ```
 
-### toBytes() : uint 
+### toBytes(uint) : bytes 
 
 Convert an unsigned integer to a bytes equivalent
 
@@ -54,7 +54,7 @@ Convert an unsigned integer to a bytes equivalent
     }
 ```
 
-### toByte() : uint 
+### toByte(uint8) : byte 
 
 Convert an 8-bit unsigned integer to its byte equivalent
 
