@@ -53,4 +53,41 @@ library Integers {
         }
         return string(_real);
     }
+
+    /**
+     * To Byte
+     *
+     * Convert an 8 bit unsigned integer to a byte
+     *
+     * @param _base The 8 bit unsigned integer
+     * @return byte The byte equivalent
+     */
+    function toByte(uint8 _base) 
+        public
+        returns (byte _ret) {
+        assembly {
+            let m_alloc := add(msize(),0x1)
+            mstore8(m_alloc, _num)
+            _ret := mload(m_alloc)
+        }
+    }
+
+    /**
+     * To Bytes
+     *
+     * Converts an unsigned integer to bytes
+     *
+     * @param _base The integer to be converted to bytes
+     * @return bytes The bytes equivalent 
+     */
+    function toBytes(uint _base) 
+        internal
+        returns (bytes _ret) {
+        assembly {
+            let m_alloc := add(msize(),0x1)
+            _ret := mload(m_alloc)
+            mstore(_ret, 0x20)
+            mstore(add(_ret, 0x20), _num)
+        }
+    }
 }
