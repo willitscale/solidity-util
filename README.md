@@ -2,17 +2,38 @@
 
 Solidity is still very primitive and doing basic operations can be quite tedious and off-putting to newer developers. I've put together a very basic library of functions to help improve this. 
 
-To use this library simply specify the import as the one in this library, use Strings for the data type string and use Integers for the data type uint:
+To use this library simply specify the import as the ones in this library and bind the libraries to the appropriate data types as seen below:
 ```
 pragma solidity ^0.4.0;
+
 import "github.com/willitscale/solidity-util/lib/Strings.sol";
 import "github.com/willitscale/solidity-util/lib/Integers.sol";
+import "github.com/willitscale/solidity-util/lib/Addresses.sol";
+
 contract MyContract {
     using Strings for string;
     using Integers for uint;
+    using Addresses for address;
 }
 ```
 This will then allow the use of the functionality listed below.
+
+## Addresses
+
+The functionality of this library is to extend the existing functionality of an address:
+- [isContract\(address\) : bool](#iscontractaddress--bool)
+
+### isContract(address) : bool 
+
+Check to see if the subject address is a contract on the Ethereum network
+
+```
+    function isContract(address _addr) public {
+        if (_addr.isContract()) {
+            // Do contract specific stuff
+        }
+    }
+```
 
 ## Integers
 
