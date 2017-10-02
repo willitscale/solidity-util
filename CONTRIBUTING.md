@@ -9,7 +9,7 @@ When contributing to this repository please try and adhear to the following befo
 
 ### Example of a good function:
 
-```
+```javascript
     /**
      * My Function Name
      *
@@ -30,7 +30,7 @@ When contributing to this repository please try and adhear to the following befo
 
 ### Example of a bad function:
 
-```
+```javascript
     function abFunc(uint a1, uint a2) public returns (uint) {
         ...
     }
