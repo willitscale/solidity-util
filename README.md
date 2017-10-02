@@ -3,7 +3,7 @@
 Solidity is still very primitive and doing basic operations can be quite tedious and off-putting to newer developers. I've put together a very basic library of functions to help improve this. 
 
 To use this library simply specify the import as the ones in this library and bind the libraries to the appropriate data types as seen below:
-```
+```javascript
 pragma solidity ^0.4.0;
 
 import "github.com/willitscale/solidity-util/lib/Strings.sol";
@@ -27,7 +27,7 @@ The functionality of this library is to extend the existing functionality of an 
 
 Check to see if the subject address is a contract on the Ethereum network
 
-```
+```javascript
     function isContract(address _addr) public {
         if (_addr.isContract()) {
             // Do contract specific stuff
@@ -47,7 +47,7 @@ The functionality of this library is based loosely around the Java implementatio
 
 Convert an ASCII string to its unsigned integer equivalent
 
-```
+```javascript
     function parseInt() {
         if (321 == Integers.parseInt("321")) {
             // Matches the uint value
@@ -59,7 +59,7 @@ Convert an ASCII string to its unsigned integer equivalent
 
 Convert an unsigned integer to its ASCII string equivalent
 
-```    
+```javascript
     function toString(uint _value) returns (string) {
         return _value.toString();
     }
@@ -69,7 +69,7 @@ Convert an unsigned integer to its ASCII string equivalent
 
 Convert an unsigned integer to a bytes equivalent
 
-```    
+```javascript
     function toString(uint _value) returns (bytes) {
         return _value.toBytes();
     }
@@ -79,7 +79,7 @@ Convert an unsigned integer to a bytes equivalent
 
 Convert an 8-bit unsigned integer to its byte equivalent
 
-```    
+```javascript
     function toByte(uint8 _value) {
         if (0x1 == Integer.toByte(_value)) {
             // Matching byte
@@ -107,7 +107,7 @@ The functionality of this library is based loosely around the Java implementatio
 
 Concatenate two strings together.
 
-```
+```javascript
     function concat() {
         string memory myVal = "firstname";
         myVal = myVal.concat(" ").concat("lastname");
@@ -118,7 +118,7 @@ Concatenate two strings together.
 
 Find the position of a character.
 
-```
+```javascript
     function indexOf() {
         string memory myVal = "haystack";
         uint positionOfFirstA = myVal.indexOf("a");
@@ -155,7 +155,7 @@ Get a partial section of the string.
 
 Splits a string into an array of smaller strings based off a delimiter.
 
-```
+```javascript
     function split() {
         string memory myVal = "my example split";
         string[] storage split = myVal.split(" ");
@@ -171,7 +171,7 @@ Splits a string into an array of smaller strings based off a delimiter.
 
 Compare two strings.
 
-```
+```javascript
     function compareTo() {
         string memory myVal = "my example split";
         if(myVal.compareTo("my example split")) {
@@ -184,7 +184,7 @@ Compare two strings.
 
 Compare two strings discarding alphabetic case.
 
-```
+```javascript
     function compareToIgnoreCase() {
         string memory myVal = "my example split";
         if(myVal.compareTo("mY Example Split")) {
@@ -197,7 +197,7 @@ Compare two strings discarding alphabetic case.
 
 Converts a string to use upper alphabetic case.
 
-```
+```javascript
     function upper() {
         string memory myVal = "lower";
         if(myVal.upper().compareTo("LOWER")) {
@@ -211,7 +211,7 @@ Converts a string to use upper alphabetic case.
 
 Converts a string to use lower alphabetic case.
 
-```
+```javascript
     function lower() {
         string memory myVal = "UPPER";
         if (myVal.lower().compareTo("upper")) {
