@@ -130,7 +130,7 @@ Find the position of a character.
 
 Get the length of a string.
 
-```
+```javascript
     function length() {
         string memory myVal = "length";
         if (myVal.length() == 6) {
@@ -143,7 +143,7 @@ Get the length of a string.
 
 Get a partial section of the string.
 
-```
+```javascript
     function substring() {
         string memory myVal = "sub string example";
         string memory firstWord = myVal.substring(3);
