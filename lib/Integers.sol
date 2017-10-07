@@ -67,7 +67,7 @@ library Integers {
         returns (byte _ret) {
         assembly {
             let m_alloc := add(msize(),0x1)
-            mstore8(m_alloc, _num)
+            mstore8(m_alloc, _base)
             _ret := mload(m_alloc)
         }
     }
@@ -87,7 +87,7 @@ library Integers {
             let m_alloc := add(msize(),0x1)
             _ret := mload(m_alloc)
             mstore(_ret, 0x20)
-            mstore(add(_ret, 0x20), _num)
+            mstore(add(_ret, 0x20), _base)
         }
     }
 }
