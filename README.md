@@ -2,13 +2,18 @@
 
 Solidity is still very primitive and doing basic operations can be quite tedious and off-putting to newer developers. I've put together a very basic library of functions to help improve this. 
 
-To use this library simply specify the import as the ones in this library and bind the libraries to the appropriate data types as seen below:
+The easiest way to use this library is to install it with npm as
+```bash
+npm install willitscale/solidity-util
+```
+
+In a project based on [Truffle framework](https://truffleframework.com/) you may then import and bind the libraries to the appropriate data types as seen below:
 ```javascript
 pragma solidity ^0.4.0;
 
-import "github.com/willitscale/solidity-util/lib/Strings.sol";
-import "github.com/willitscale/solidity-util/lib/Integers.sol";
-import "github.com/willitscale/solidity-util/lib/Addresses.sol";
+import "solidity-util/lib/Strings.sol";
+import "solidity-util/lib/Integers.sol";
+import "solidity-util/lib/Addresses.sol";
 
 contract MyContract {
     using Strings for string;
@@ -17,6 +22,8 @@ contract MyContract {
 }
 ```
 This will then allow the use of the functionality listed below.
+
+Other frameworks may require slightly different approaches than the description above.
 
 ## Addresses
 
