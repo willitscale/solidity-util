@@ -1,4 +1,4 @@
-pragma solidity ^0.4.0;
+pragma solidity >=0.4.25 <0.6.0;
 
 /**
  * Addresses Library
@@ -17,7 +17,7 @@ library Addresses {
      * @param _base The address on the network to check if it is a contract
      * @return bool Returns true if it is a valid contract
      */
-    function isContract(address _base) returns (bool _r) {
+    function isContract(address _base) public returns (bool _r) {
         assembly {
             _r := gt(extcodesize(_base), 0)
         }
