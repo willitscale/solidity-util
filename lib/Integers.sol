@@ -1,4 +1,4 @@
-pragma solidity ^0.4.0;
+pragma solidity >=0.4.25 <0.6.0;
 
 /**
  * Integers Library
@@ -18,14 +18,14 @@ library Integers {
      * @param _value The ASCII string to be converted to an unsigned integer
      * @return uint The unsigned value of the ASCII string
      */
-    function parseInt(string _value) 
+    function parseInt(string memory _value)
         public
         returns (uint _ret) {
         bytes memory _bytesValue = bytes(_value);
         uint j = 1;
         for(uint i = _bytesValue.length-1; i >= 0 && i < _bytesValue.length; i--) {
-            assert(_bytesValue[i] >= 48 && _bytesValue[i] <= 57);
-            _ret += (uint(_bytesValue[i]) - 48)*j;
+            assert(uint8(_bytesValue[i]) >= 48 && uint8(_bytesValue[i]) <= 57);
+            _ret += (uint(uint8(_bytesValue[i])) - 48)*j;
             j*=10;
         }
     }
@@ -40,11 +40,11 @@ library Integers {
      */
     function toString(uint _base) 
         internal
-        returns (string) {
+        returns (string memory) {
         bytes memory _tmp = new bytes(32);
         uint i;
         for(i = 0;_base > 0;i++) {
-            _tmp[i] = byte((_base % 10) + 48);
+            _tmp[i] = byte(uint8((_base % 10) + 48));
             _base /= 10;
         }
         bytes memory _real = new bytes(i--);
@@ -82,7 +82,7 @@ library Integers {
      */
     function toBytes(uint _base) 
         internal
-        returns (bytes _ret) {
+        returns (bytes memory _ret) {
         assembly {
             let m_alloc := add(msize(),0x1)
             _ret := mload(m_alloc)
