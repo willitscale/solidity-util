@@ -9,7 +9,7 @@ npm install willitscale/solidity-util
 
 In a project based on [Truffle framework](https://truffleframework.com/) you may then import and bind the libraries to the appropriate data types as seen below:
 ```javascript
-pragma solidity ^0.4.0;
+pragma solidity ^0.5.0;
 
 import "solidity-util/lib/Strings.sol";
 import "solidity-util/lib/Integers.sol";
@@ -19,6 +19,7 @@ contract MyContract {
     using Strings for string;
     using Integers for uint;
     using Addresses for address;
+    using Addresses for address payable;
 }
 ```
 This will then allow the use of the functionality listed below.
