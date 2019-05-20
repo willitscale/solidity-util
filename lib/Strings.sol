@@ -25,9 +25,9 @@ library Strings {
      * @return string The resulting string from combinging the base and value
      */
     function concat(string memory _base, string memory _value)
-    internal
-    pure
-    returns (string memory) {
+        internal
+        pure
+        returns (string memory) {
         bytes memory _baseBytes = bytes(_base);
         bytes memory _valueBytes = bytes(_value);
 
@@ -65,9 +65,9 @@ library Strings {
      *             in the case of no matches found
      */
     function indexOf(string memory _base, string memory _value)
-    internal
-    pure
-    returns (int) {
+        internal
+        pure
+        returns (int) {
         return _indexOf(_base, _value, 0);
     }
 
@@ -88,9 +88,9 @@ library Strings {
      *             in the case of no matches found
      */
     function _indexOf(string memory _base, string memory _value, uint _offset)
-    internal
-    pure
-    returns (int) {
+        internal
+        pure
+        returns (int) {
         bytes memory _baseBytes = bytes(_base);
         bytes memory _valueBytes = bytes(_value);
 
@@ -102,7 +102,7 @@ library Strings {
             }
         }
 
-        return - 1;
+        return -1;
     }
 
     /**
@@ -115,9 +115,9 @@ library Strings {
      * @return uint The length of the passed string
      */
     function length(string memory _base)
-    internal
-    pure
-    returns (uint) {
+        internal
+        pure
+        returns (uint) {
         bytes memory _baseBytes = bytes(_base);
         return _baseBytes.length;
     }
@@ -134,9 +134,9 @@ library Strings {
      * @return string The extracted sub string
      */
     function substring(string memory _base, int _length)
-    internal
-    pure
-    returns (string memory) {
+        internal
+        pure
+        returns (string memory) {
         return _substring(_base, _length, 0);
     }
 
@@ -154,9 +154,9 @@ library Strings {
      * @return string The extracted sub string
      */
     function _substring(string memory _base, int _length, int _offset)
-    internal
-    pure
-    returns (string memory) {
+        internal
+        pure
+        returns (string memory) {
         bytes memory _baseBytes = bytes(_base);
 
         assert(uint(_offset + _length) <= _baseBytes.length);
@@ -187,9 +187,9 @@ library Strings {
      *                  do not container the delimiter.
      */
     function split(string memory _base, string memory _value)
-    internal
-    pure
-    returns (string[] memory splitArr) {
+        internal
+        pure
+        returns (string[] memory splitArr) {
         bytes memory _baseBytes = bytes(_base);
 
         uint _offset = 0;
@@ -240,9 +240,9 @@ library Strings {
      * @return bool Simply notates if the two string have an equivalent
      */
     function compareTo(string memory _base, string memory _value)
-    internal
-    pure
-    returns (bool) {
+        internal
+        pure
+        returns (bool) {
         bytes memory _baseBytes = bytes(_base);
         bytes memory _valueBytes = bytes(_value);
 
@@ -273,9 +273,9 @@ library Strings {
      *              discarding case
      */
     function compareToIgnoreCase(string memory _base, string memory _value)
-    internal
-    pure
-    returns (bool) {
+        internal
+        pure
+        returns (bool) {
         bytes memory _baseBytes = bytes(_base);
         bytes memory _valueBytes = bytes(_value);
 
@@ -304,9 +304,9 @@ library Strings {
      * @return string 
      */
     function upper(string memory _base)
-    internal
-    pure
-    returns (string memory) {
+        internal
+        pure
+        returns (string memory) {
         bytes memory _baseBytes = bytes(_base);
         for (uint i = 0; i < _baseBytes.length; i++) {
             _baseBytes[i] = _upper(_baseBytes[i]);
@@ -325,9 +325,9 @@ library Strings {
      * @return string 
      */
     function lower(string memory _base)
-    internal
-    pure
-    returns (string memory) {
+        internal
+        pure
+        returns (string memory) {
         bytes memory _baseBytes = bytes(_base);
         for (uint i = 0; i < _baseBytes.length; i++) {
             _baseBytes[i] = _lower(_baseBytes[i]);
@@ -346,9 +346,9 @@ library Strings {
      *                and in a lower case otherwise returns the original value
      */
     function _upper(bytes1 _b1)
-    private
-    pure
-    returns (bytes1) {
+        private
+        pure
+        returns (bytes1) {
 
         if (_b1 >= 0x61 && _b1 <= 0x7A) {
             return bytes1(uint8(_b1) - 32);
@@ -368,9 +368,9 @@ library Strings {
      *                and in a upper case otherwise returns the original value
      */
     function _lower(bytes1 _b1)
-    private
-    pure
-    returns (bytes1) {
+        private
+        pure
+        returns (bytes1) {
 
         if (_b1 >= 0x41 && _b1 <= 0x5A) {
             return bytes1(uint8(_b1) + 32);
