@@ -1,4 +1,4 @@
-pragma solidity ^0.4.0;
+pragma solidity ^0.5.0;
 
 /**
  * Integers Library
@@ -18,18 +18,19 @@ library Integers {
      * @param _value The ASCII string to be converted to an unsigned integer
      * @return uint The unsigned value of the ASCII string
      */
-    function parseInt(string _value) 
+    function parseInt(string memory _value)
         public
+        pure
         returns (uint _ret) {
         bytes memory _bytesValue = bytes(_value);
         uint j = 1;
         for(uint i = _bytesValue.length-1; i >= 0 && i < _bytesValue.length; i--) {
-            assert(_bytesValue[i] >= 48 && _bytesValue[i] <= 57);
-            _ret += (uint(_bytesValue[i]) - 48)*j;
+            assert(uint8(_bytesValue[i]) >= 48 && uint8(_bytesValue[i]) <= 57);
+            _ret += (uint8(_bytesValue[i]) - 48)*j;
             j*=10;
         }
     }
-    
+
     /**
      * To String
      * 
@@ -38,13 +39,14 @@ library Integers {
      * @param _base The unsigned integer to be converted to a string
      * @return string The resulting ASCII string value
      */
-    function toString(uint _base) 
+    function toString(uint _base)
         internal
-        returns (string) {
+        pure
+        returns (string memory) {
         bytes memory _tmp = new bytes(32);
         uint i;
         for(i = 0;_base > 0;i++) {
-            _tmp[i] = byte((_base % 10) + 48);
+            _tmp[i] = byte(uint8((_base % 10) + 48));
             _base /= 10;
         }
         bytes memory _real = new bytes(i--);
@@ -62,8 +64,9 @@ library Integers {
      * @param _base The 8 bit unsigned integer
      * @return byte The byte equivalent
      */
-    function toByte(uint8 _base) 
+    function toByte(uint8 _base)
         public
+        pure
         returns (byte _ret) {
         assembly {
             let m_alloc := add(msize(),0x1)
@@ -80,9 +83,10 @@ library Integers {
      * @param _base The integer to be converted to bytes
      * @return bytes The bytes equivalent 
      */
-    function toBytes(uint _base) 
+    function toBytes(uint _base)
         internal
-        returns (bytes _ret) {
+        pure
+        returns (bytes memory _ret) {
         assembly {
             let m_alloc := add(msize(),0x1)
             _ret := mload(m_alloc)
