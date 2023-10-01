@@ -1,13 +1,15 @@
 # Solidity Standard Utilities
 
-Solidity is still very primitive and doing basic operations can be quite tedious and off-putting to newer developers. I've put together a very basic library of functions to help improve this. 
+Solidity is still very primitive and doing basic operations can be quite tedious and off-putting to newer developers. I've put together a very basic library of functions to help improve this.
 
 The easiest way to use this library is to install it with npm as
+
 ```bash
 npm install willitscale/solidity-util
 ```
 
 In a project based on [Truffle framework](https://truffleframework.com/) you may then import and bind the libraries to the appropriate data types as seen below:
+
 ```javascript
 pragma solidity ^0.5.0;
 
@@ -22,6 +24,7 @@ contract MyContract {
     using Addresses for address payable;
 }
 ```
+
 This will then allow the use of the functionality listed below.
 
 Other frameworks may require slightly different approaches than the description above.
@@ -29,9 +32,10 @@ Other frameworks may require slightly different approaches than the description 
 ## Addresses
 
 The functionality of this library is to extend the existing functionality of an address:
+
 - [isContract\(address\) : bool](#iscontractaddress--bool)
 
-### isContract(address) : bool 
+### isContract(address) : bool
 
 Check to see if the subject address is a contract on the Ethereum network
 
@@ -46,24 +50,25 @@ Check to see if the subject address is a contract on the Ethereum network
 ## Integers
 
 The functionality of this library is based loosely around the Java implementation:
+
 - [parseInt\(string\) : uint](#parseintstring--uint)
 - [toString\(\) : uint](#tostring--uint)
 - [toBytes\(uint\) : bytes](#tobytesuint--bytes)
 - [toByte\(uint8\) : byte](#tobyteuint8--byte)
 
-### parseInt(string) : uint 
+### parseInt(string) : uint
 
 Convert an ASCII string to its unsigned integer equivalent
 
 ```javascript
-    function parseInt() {
-        if (321 == Integers.parseInt("321")) {
-            // Matches the uint value
-        }
-    }
+function parseInt() {
+  if (321 == Integers.parseInt("321")) {
+    // Matches the uint value
+  }
+}
 ```
 
-### toString() : uint 
+### toString() : uint
 
 Convert an unsigned integer to its ASCII string equivalent
 
@@ -73,7 +78,7 @@ Convert an unsigned integer to its ASCII string equivalent
     }
 ```
 
-### toBytes(uint) : bytes 
+### toBytes(uint) : bytes
 
 Convert an unsigned integer to a bytes equivalent
 
@@ -83,7 +88,7 @@ Convert an unsigned integer to a bytes equivalent
     }
 ```
 
-### toByte(uint8) : byte 
+### toByte(uint8) : byte
 
 Convert an 8-bit unsigned integer to its byte equivalent
 
@@ -95,11 +100,23 @@ Convert an 8-bit unsigned integer to its byte equivalent
     }
 ```
 
+### multiply_uint256(uint256, uint256) : uint256
+
+Multiplies two uint256 values and returns the result
+
+```javascript
+    function multiply_uint256(uint256 _value1, uint256 _value2) {
+        // Get multiplied value
+        multipliedValue = multiply_uint256(value1, _value2);
+    }
+```
+
 ## Strings
 
 **Please be aware that some of these functions can be quite gas heavy so use appropriately!**
 
 The functionality of this library is based loosely around the Java implementation:
+
 - [concat\(string\) : string](#concatstring--string)
 - [indexOf\(string\) : int](#indexofstring--int)
 - [length\(\) : uint](#length--uint)
@@ -110,8 +127,7 @@ The functionality of this library is based loosely around the Java implementatio
 - [upper\(string\) : string](#upperstring--string)
 - [lower\(string\) : string](#lowerstring--string)
 
-
-### concat(string) : string 
+### concat(string) : string
 
 Concatenate two strings together.
 
@@ -215,7 +231,6 @@ Converts a string to use upper alphabetic case.
 ```
 
 ### lower(string) : string
-
 
 Converts a string to use lower alphabetic case.
 

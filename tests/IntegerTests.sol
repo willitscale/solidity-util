@@ -13,13 +13,13 @@ import "lib/Integers.sol";
 contract TestIntegers {
     using Integers for uint;
     using Strings for string;
-    
+
     function toStringTest() {
         uint example = 1223;
         string memory comparison = "1223";
         assert(comparison.compareTo(example.toString()));
     }
-    
+
     function parseIntTest() {
         assert(321 == Integers.parseInt("321"));
     }
